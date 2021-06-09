@@ -26,18 +26,19 @@ versionPayloadChecksum = prefixPayload + h[1:8]
 eKey = int(versionPayloadChecksum, 16)
 print(eKey)
 base58 = ''
-m, r = divmod(eKey, 58)
-
 
 while(1):
     m, r = divmod(eKey, 58)
+
     base58 +=s[r]
     print(base58)
+    print("eKey:", eKey)
     if m == 0:
+
         break
     eKey = m
 
-
+#처음부터 끝까지 -1칸 간격으로 역순!
 wif = base58[::-1]
 print("\n개인키 (Hex):", privKey.lower())
 print("개인키 (WIF): ", wif)
