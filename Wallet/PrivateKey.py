@@ -22,7 +22,7 @@ def random_key():
 
 while 1:
     privKey = random_key()
-    print(privKey)
+    #print(privKey)
     if int(privKey, 16) < N:
         break
 
